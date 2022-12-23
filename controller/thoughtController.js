@@ -1,5 +1,6 @@
 const {User, Thought} = require("../models");
 module.exports = {
+    // This will allow me to get All/Single/Create/Update/Delete Thoughts
     getThoughts(req, res){
         Thought.find()
             .then((thoughts) => res.json(thoughts))
@@ -64,7 +65,8 @@ module.exports = {
         )
         .catch((err) => res.status(500).json(err));
     },
-
+    // This is where the thoughts end
+    // This is to Create and Delete reactions
     createReaction(req, res){
         Thought.findOneAndUpdate(
             {_id: req.params.thoughtId},

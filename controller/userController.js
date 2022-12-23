@@ -1,6 +1,7 @@
 const { User, Thought } = require("../models");
 
 module.exports = {
+    // This allows me to get All/Single/Create/Delete/Update Users
     getUsers(req, res) {
         User.find({})
             .then((user) => res.json(user))
@@ -48,7 +49,8 @@ module.exports = {
             )
             .catch((err) => res.status(500).json(err));
     },
-
+    // This is where the users end
+    // This allows me to add and remove friends
     addFriend(req, res) {
         User.findOneAndUpdate(
             { _id: req.params.userId },

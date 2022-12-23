@@ -8,7 +8,7 @@ const {
     addFriend,
     removeFriend,
 } = require("../../controller/userController");
-
+// These are the api to get All/Create/Single/Update/Delete users/friends
 router.route("/").get(getUsers).post(createUser);
 router.route("/:userId").get(getSingleUser).put(updateUser).delete(deleteUser);
 router.route("/:userId/friends/:friendId").post(addFriend).delete(removeFriend);
